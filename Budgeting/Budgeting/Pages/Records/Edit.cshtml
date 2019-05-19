@@ -1,0 +1,50 @@
+﻿@page
+@model Budgeting.Pages.Records.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Record</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Record.ID" />
+            <div class="form-group">
+                <label asp-for="Record.Expenses" class="control-label"></label>
+                <input asp-for="Record.Expenses" class="form-control" />
+                <span asp-validation-for="Record.Expenses" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Record.ExpensesDate" class="control-label"></label>
+                <input asp-for="Record.ExpensesDate" class="form-control" />
+                <span asp-validation-for="Record.ExpensesDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Record.Income" class="control-label"></label>
+                <input asp-for="Record.Income" class="form-control" />
+                <span asp-validation-for="Record.Income" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Record.IncomeDate" class="control-label"></label>
+                <input asp-for="Record.IncomeDate" class="form-control" />
+                <span asp-validation-for="Record.IncomeDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
